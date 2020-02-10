@@ -25,7 +25,8 @@ class Board {
                     isMine: false,
                     value: 0,
                     flagged: false,
-                    opened: false
+                    opened: false,
+                    exploded: false
                 };
             }
         }
@@ -46,9 +47,9 @@ class Board {
             for (let y_idx = 0; y_idx < n; ++y_idx) {
 
                 if (!grid[x_idx][y_idx].isMine) {
-                    if (x_idx > 1) {
+                    if (x_idx >= 1) {
                         // check x-1 values
-                        if (y_idx-1 > 0 && grid[x_idx-1][y_idx-1].isMine) {
+                        if (y_idx-1 >= 0 && grid[x_idx-1][y_idx-1].isMine) {
                             grid[x_idx][y_idx].value += 1;
                         }
                         if (y_idx+1 < n && grid[x_idx-1][y_idx+1].isMine) {
@@ -61,7 +62,7 @@ class Board {
 
                     if (x_idx < n-1) {
                         // check x+1 values
-                        if (y_idx-1 > 0 && grid[x_idx+1][y_idx-1].isMine) {
+                        if (y_idx-1 >= 0 && grid[x_idx+1][y_idx-1].isMine) {
                             grid[x_idx][y_idx].value += 1;
                         }
                         if (y_idx+1 < n && grid[x_idx+1][y_idx+1].isMine) {
@@ -73,7 +74,7 @@ class Board {
                     }
 
                     // check same x values
-                    if (y_idx-1 > 0 && grid[x_idx][y_idx-1].isMine) {
+                    if (y_idx-1 >= 0 && grid[x_idx][y_idx-1].isMine) {
                         grid[x_idx][y_idx].value += 1;
                     }
                     if (y_idx+1 < n && grid[x_idx][y_idx+1].isMine) {
