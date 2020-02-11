@@ -53,7 +53,6 @@ function solve(board) {
             if (bln) changes++;
         }
     }
-    //console.log("pls no");
     return false;
 }
 
