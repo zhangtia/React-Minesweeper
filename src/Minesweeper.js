@@ -163,6 +163,9 @@ class Minesweeper extends React.PureComponent {
                 <div style={{ width: 200, margin: "0 auto", display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <p>Refresh page to reset!</p>
                 </div>
+                <div style={{ width: 200, margin: "0 auto", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <a href="https://zhangtia.github.io">My personal webpage!</a>
+                </div>
                 <div style={{ width: 500, margin: "0 auto", paddingTop: "2%" }}>
                     {this.state.board.answ.map((row) => {
                         return row.map((contents) => {
@@ -175,6 +178,7 @@ class Minesweeper extends React.PureComponent {
                         })
                     })}
                 </div>
+
             </div>
         );
     }
